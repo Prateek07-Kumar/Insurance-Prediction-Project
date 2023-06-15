@@ -30,7 +30,7 @@ class DataIngestionConfig:
         except Exception  as e:
             raise InsuranceException(e,sys)
         
-        # Convert data into dict
+    # Convert data into dict
     def to_dict(self,)->dict:
         try:
             return self.__dict__
