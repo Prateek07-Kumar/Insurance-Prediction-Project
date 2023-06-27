@@ -2,8 +2,9 @@ from Insurance.predictor import ModelResolver
 from Insurance.entity import config_entity,artifact_entity
 from Insurance.exception import InsuranceException
 from Insurance.logger import logging
-from Insurance.utils import load_object
+from Insurance import utils
 from sklearn.metrics import r2_score
+from sklearn.linear_model import LinearRegression
 import pandas  as pd
 import sys,os
 from Insurance.config import TARGET_COLUMN
