@@ -10,7 +10,7 @@ import sys,os
 from Insurance.config import TARGET_COLUMN
 from typing import Optional
 from sklearn.pipeline import Pipeline
-
+from Insurance.utils import load_object
 
 
 class ModelEvaluation:
@@ -92,7 +92,7 @@ class ModelEvaluation:
             
             input_arr =transformer.transform(test_df[input_feature_name])
             y_pred = model.predict(input_arr)
-            # print(f"Prediction using previous model: {y_pred[:5]}")
+            print(f"Prediction using previous model: {y_pred[:5]}")
             
             # comparision b/w new model and old model
             
@@ -110,14 +110,14 @@ class ModelEvaluation:
             
             # current_target_encoder.transform(target_df)
             # current_target_encoder.inverse_transform(y_pred[:5])
-            # print(f"Prediction using trained model: {y_pred[:5]}")
+            print(f"Prediction using trained model: {y_pred[:5]}")
             current_model_score = r2_score(y_true=y_true, y_pred=y_pred)
             
             # Final comparision between both model
             
             # logging.info(f"Accuracy using current trained model: {current_model_score}")
             if current_model_score<=previous_model_score:
-                logging.info(f"Current trained model is not better than previous model")
+                # logging.info(f"Current trained model is not better than previous model")
                 raise Exception("Current trained model is not better than previous model")
 
             
