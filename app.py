@@ -10,8 +10,7 @@ encoder = pickle.load(open('target_encoder.pkl','rb'))
 transformer = pickle.load(open('transformer.pkl','rb'))
 
 
-st.title("Insurance Premium Prediction")
-
+st.title("Insurance Premiu
 
 ## for Gender Column
 sex = st.selectbox('Please select gender', ('male', 'female'))
